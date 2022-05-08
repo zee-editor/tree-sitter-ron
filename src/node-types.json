@@ -242,11 +242,15 @@
       "required": false,
       "types": [
         {
-          "type": "identifier",
+          "type": "struct_entry",
           "named": true
         },
         {
-          "type": "struct_entry",
+          "type": "struct_name",
+          "named": true
+        },
+        {
+          "type": "tuple",
           "named": true
         }
       ]
@@ -306,6 +310,21 @@
         },
         {
           "type": "tuple",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "struct_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
           "named": true
         }
       ]
@@ -372,6 +391,10 @@
   },
   {
     "type": "(",
+    "named": false
+  },
+  {
+    "type": "()",
     "named": false
   },
   {

@@ -1,3 +1,5 @@
+// Reference: https://github.com/ron-rs/ron/blob/master/docs/grammar.md
+
 module.exports = grammar({
   name: 'ron',
 
@@ -52,8 +54,26 @@ module.exports = grammar({
       '}',
     ),
 
-    struct: $ => seq(
-      optional($.identifier),
+    struct: $ => choice(
+      $._unit_struct,
+      $._tuple_struct,
+      $._named_struct
+    ),
+
+    _unit_struct: $ => choice(
+      // $.identifier,
+      '()'
+    ),
+
+    struct_name: $ => $.identifier,
+
+    _tuple_struct: $ => seq(
+      $.struct_name,
+      $.tuple,
+    ),
+
+    _named_struct: $ => seq(
+      optional($.struct_name),
       '(',
       sepBy(',', $.struct_entry),
       optional(','),

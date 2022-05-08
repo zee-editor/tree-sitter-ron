@@ -180,6 +180,49 @@
       ]
     },
     "struct": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_unit_struct"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_tuple_struct"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_named_struct"
+        }
+      ]
+    },
+    "_unit_struct": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "()"
+        }
+      ]
+    },
+    "struct_name": {
+      "type": "SYMBOL",
+      "name": "identifier"
+    },
+    "_tuple_struct": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "struct_name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tuple"
+        }
+      ]
+    },
+    "_named_struct": {
       "type": "SEQ",
       "members": [
         {
@@ -187,7 +230,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "identifier"
+              "name": "struct_name"
             },
             {
               "type": "BLANK"

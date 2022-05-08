@@ -18,7 +18,8 @@ SomeStruct()
 
 (source_file
   (struct
-  (identifier)))
+    (struct_name
+      (identifier))))
 
 
 ================================================================================
@@ -132,7 +133,8 @@ GameConfig( // optional struct name
 
 (source_file
   (struct
-    (identifier)
+    (struct_name
+      (identifier))
     (line_comment)
     (struct_entry
       (identifier)
@@ -180,7 +182,6 @@ GameConfig( // optional struct name
           (identifier)
           (boolean))))))
 
-
 ================================================================================
 Scene struct used as an example in repo ron-rs/ron
 ================================================================================
@@ -210,7 +211,8 @@ Scene( // class name is optional
 
 (source_file
   (struct
-    (identifier)
+    (struct_name
+      (identifier))
     (line_comment)
     (struct_entry
       (identifier)
@@ -246,3 +248,24 @@ Scene( // class name is optional
           (struct_entry
             (identifier)
             (string)))))))
+
+
+================================================================================
+Scene struct used as an example in repo ron-rs/ron
+================================================================================
+
+Some(Comment(token: "// "))
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (struct
+    (struct_name
+      (identifier))
+    (tuple
+      (struct
+        (struct_name
+          (identifier))
+        (struct_entry
+          (identifier)
+          (string))))))
