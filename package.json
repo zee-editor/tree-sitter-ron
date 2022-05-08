@@ -1,0 +1,34 @@
+{
+  "name": "tree-sitter-ron",
+  "version": "0.1.0",
+  "description": "Rusty Object Notation (RON) grammar for tree-sitter",
+  "main": "bindings/node",
+  "keywords": [
+    "parser",
+    "ron"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zee-editor/tree-sitter-ron.git"
+  },
+  "author": "Marius Cobzarenco",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.0"
+  },
+  "scripts": {
+    "tree-sitter": "tree-sitter",
+    "generate": "tree-sitter generate",
+    "test": "tree-sitter test"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.ron",
+      "injection-regex": "ron",
+      "file-types": [
+        "ron"
+      ]
+    }
+  ]
+}
